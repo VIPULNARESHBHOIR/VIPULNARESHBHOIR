@@ -1,4 +1,4 @@
-// programe to getting largest and second largest number in the array
+// programe to Find largest and second largest number in the array
 #include <stdio.h>
 
 int main() {
