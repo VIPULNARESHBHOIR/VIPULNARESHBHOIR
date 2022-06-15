@@ -1,0 +1,47 @@
+/******************************************************************************
+CODE TO CALCULATE nCr (binomial)
+using functions
+
+*******************************************************************************/
+#include <stdio.h>
+int fact_n();
+int fact_r();
+int fact_n_r();
+
+void main()
+{
+  int n,r;
+printf("calculate nCr\n");
+  printf("n:-");
+  scanf("%d",&n);
+  printf("r:-");
+  scanf("%d",&r);
+  if (n<r)
+  {
+  printf("n should be greater than r\n\n");
+  main();    
+  }
+  else
+ {
+  int fn=fact_n(n);
+  int fr=fact_r(r);
+  int fn_r=fact_n_r(n-r);
+  float nCr=fn/(fr*fn_r);
+printf("%dC%d = %d!/(%d!×%d!) = %.2f",n,r,n,r,n-r,nCr);
+}
+}
+  int fact_n(int n)
+  { if (n==0 || n==1)
+  return 1;
+  return (n*fact_n(n-1));
+   }
+int fact_r(int r)
+  { if (r==0 || r==1)
+  return 1;
+  return (r*fact_r(r-1));
+   }
+int fact_n_r(int k)
+  { if (k==0 || k==1)
+  return 1;
+  return (k*fact_n_r(k-1));
+   }
