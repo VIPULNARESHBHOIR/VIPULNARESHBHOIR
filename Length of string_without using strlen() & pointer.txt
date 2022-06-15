@@ -1,0 +1,17 @@
+/******************************************************************************
+CODE TO CALCULATE length of string', 
+WITHOUT USING POINTER AND strlen() FUNCTION
+
+*******************************************************************************/
+#include <stdio.h>
+int main() 
+{
+  char s[100];
+  printf("enter the string:");
+  gets(s);
+int i;
+for(  i = 0; s[i] != '\0'; ++i);
+
+  printf("Length of the string: %d", i);
+  return 0;
+}
