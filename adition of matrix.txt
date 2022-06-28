@@ -1,0 +1,53 @@
+// ADD TWO MATRIX 
+
+#include <stdio.h>
+int main()
+{
+ int m1[10][10],m2[10][10],m3[10][10];
+ int r,c,i,j,k;
+ printf("ADITION IS POSSIBLE ONLY WHEN ORDER OF BOTH MATRIX SAME");
+ printf("enter rows and column for first matrix::\n");
+ scanf("%d%d",&r,&c);
+ printf("enter elememts of matrix:\n");
+ 
+ for(i=0;i<r;i++)
+ {
+ for(j=0;j<c;j++)
+ {
+  scanf("%d",&m1[i][j]);   
+ }
+ }
+ 
+ printf("enter rows and column for 2nd matrix::\n");
+ scanf("%d%d",&r,&c);
+ printf("enter elememts of matrix:\n");
+ 
+ for(i=0;i<r;i++)
+ {
+ for(j=0;j<c;j++)
+ {
+  scanf("%d",&m2[i][j]);   
+ }
+ }
+ //addition of matrix
+ 
+ for(i=0;i<r;i++)
+ {
+ for(j=0;j<c;j++)
+ {
+  m3[i][j]=m1[i][j] + m2[i][j];  
+ }
+ }
+ printf("adition of matrix:\n");
+ for(i=0;i<r;i++)
+ {
+ for(j=0;j<c;j++)
+ {
+ printf("%5d",m3[i][j]);
+ if (j==c-1)
+ printf("\n");
+ }
+ }
+return 0;
+
+}
