@@ -1,17 +1,40 @@
 // MATRIX MULTIPLICATION 
 #include <stdio.h>
 
-//get the 1st matrix elements
-int matrix1(int M[10][10],int r,int c)
+//get the 1st and 2nd matrix elements
+int matrix_El(int M[][10],int r,int c)
 {
- printf("enter elememts of matrix1:\n");
+ printf("enter matrix elements:\n");
  for(int i=0;i<r;++i)
  for(int j=0;j<c;++j)
  scanf("%d",&M[i][j]);
 }
 
+//matrix multiplication statement
+int multiply(int m1[][10],int m2[][10],int m1m2[][10],int r1,int c1,int r2,int c2)
+{
+ printf("Multiplication of matrix1 & matrix2:\n");
+ for(int i=0;i<r1;++i){
+ for(int j=0;j<c2;++j)
+ {
+ m1m2[i][j]=0;
+ }
+ }
+ 
+ for(int i=0;i<r1;++i)
+{
+ for(int j=0;j<c2;++j)
+ {
+ for(int k=0;k<c1;++k)
+ {
+ m1m2[i][j]+=m1[i][k]*m2[k][j];
+ }
+ }
+}
+}
+
 //result matrix
-int result(int m1m2[10][10], int r,int c)
+int result(int m1m2[][10], int r,int c)
 {
 
  for(int i=0;i<r;++i){
@@ -21,28 +44,6 @@ int result(int m1m2[10][10], int r,int c)
  printf("\n");
  }
  }
-}
-
-//matrix multiplication statement
-int multiply(int m1[10][10],int m2[10][10],int m1m2[10][10],int r1,int c1,int r2,int c2)
-{
- printf("Multiplication of matrix1 & matrix2:\n");
- for(int i=0;i<r1;++i)
- for(int j=0;j<c2;++j)
- {
- m1m2[i][j]=0;
- }
- 
- for(int i=0;i<r1;++i)
-{
- for(int j=0;j<c2;++j)
- {
- for(int k=0;k<c1;++k)
- {
- m1m2[i][j]=m1m2[i][j]+m1[i][k]*m2[k][j];
- }
- }
-}
 }
  
 int main()
@@ -55,10 +56,10 @@ int main()
  printf("enter rows and column for 2nd matrix::\n");
  scanf("%d%d",&r2,&c2);
  
- matrix1(m1, r1, c1);
- matrix1(m2, r2, c2);
+ matrix_El(m1, r1, c1);
+matrix_El(m2, r2, c2);
  multiply(m1,m2,m1m2,r1,c1,r2,c2);
- result(m1m2,r2,c2);
+ result(m1m2,r1,c2);
  return 0;
 
 }
