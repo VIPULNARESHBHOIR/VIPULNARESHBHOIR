@@ -1,0 +1,20 @@
+//Calculate powers of positive integer
+#include <stdio.h>
+  int cal_pow( int x,int n)
+  { int power;
+      if (n==1)
+      return x;
+      return x*cal_pow(x,n-1);
+     
+  }
+  
+
+
+int main()
+{
+  int x,n;
+  printf("enter the value for x(num) and n(pow)::");
+  scanf("%d%d",&x,&n);
+  printf("\n%d^%d=%d\n\a",x,n,cal_pow(x,n));
+  return 0;
+}

@@ -1,0 +1,6 @@
+
+result=lambda a,b : a**b
+
+a=int(input("a"))
+b=int(input("b"))
+print(a,'^',b,'=',result(a,b))

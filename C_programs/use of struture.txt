@@ -1,0 +1,32 @@
+//USE OF STRUCTURE
+
+#include <stdio.h>
+struct details
+{
+float bat_avg;
+char pname[50];
+char pteam[50];
+}TP[10];
+
+int main()
+{
+struct details TP[10];
+printf("**Enter the details of team members:**\n");
+for(int i=0;i<10;i++)
+{
+printf("\nEnter name of %d member and team name::",i+1);
+scanf("%s %s",TP[i].pname,TP[i].pteam);
+printf("Enter the avg batting score:");
+scanf("%f",&TP[i].bat_avg);
+}
+
+printf("\n\nthe details of team members:\n");
+for(int j=0;j<10;j++)
+{
+printf("\n%d)name of member: %s",j+1,TP[j].pname);
+printf("\n  Team name: %s",TP[j].pteam);
+printf("\n  the avg batting score: %f",TP[j].bat_avg);
+}
+return 0;
+
+}

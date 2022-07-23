@@ -1,0 +1,27 @@
+// count total number of Vowel and Consonant in the string.
+
+#include <stdio.h>
+int main()
+{
+int i,j,k,vow,cons,space,digit;
+char str[100];
+vow=cons=digit=space=0;
+printf("enter the string:");
+gets(str);
+for(i=0;str[i]!='\0';i++)
+{
+ // convert character to lowercase
+ str[i] = tolower(str[i]);
+ if (str[i]=='a'||str[i]=='e'||str[i]=='i'||str[i]=='o'||str[i]=='u')
+ {++vow;}
+else if (str[i]>='a' && str[i]<='z')
+{++cons;}
+else if (str[i]>='0' && str[i]<='9')
+{++digit;}
+else if (str[i]==' ')
+{++space;}
+}
+printf("Number of Vowels are: %d\n",vow);
+printf("Number of consonent are: %d",cons);
+return 0;
+}
