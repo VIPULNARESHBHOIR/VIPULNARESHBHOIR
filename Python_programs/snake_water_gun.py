@@ -1,14 +1,14 @@
 # creating a function 
 def Game():
     #making a list and taking a user input
-    list1=["SNAKE","WATER","GUN"]
+    list1=["STONE","PAPER","SEASOR"]
     k=int(input("YOU:"))
     user=list1[k]
     print("USER:",user)
 
     #taking a computer input       
     rad=random.choice(list1)
-    print("comp:",rad)
+    print("Comp:",rad)
 
     #declaring WINNER!
     if (user==rad):
@@ -21,5 +21,5 @@ def Game():
 
 #importing random module
 import random
-print("\t\tclick: 0. SNAKE 1.WATER 2.GUN::")
+print("\t\tclick: 0.STONE 1.PAPER 2.SEASOR::")
 Game()
