@@ -1,0 +1,92 @@
+#include<stdio.h>
+#include<stdlib.h>
+ 
+struct circularQueue
+{
+    int size;
+    int f;
+    int r;
+    int* arr;
+};
+int x;
+ 
+int isEmpty(struct circularQueue *q){
+    if(q->r==q->f){
+        return 1;
+    }
+    return 0;
+}
+ 
+int isFull(struct circularQueue *q){
+    if((q->r+1)%q->size == q->f){
+        return 1;
+    }
+    return 0;
+}
+ 
+void enqueue(struct circularQueue *q, int val){
+    if(isFull(q)){
+        printf("This Queue is full");
+    }
+    else{
+        q->r = (q->r +1)%q->size;
+        q->arr[q->r] = val; 
+        printf("Enqued element: %d\n", val);
+    }
+}
+ 
+int dequeue(struct circularQueue *q){
+    int a = -1;
+    if(isEmpty(q)){
+        printf("This Queue is empty\n");
+        return 0;
+    }
+    else{
+        q->f = (q->f +1)%q->size;
+        a = q->arr[q->f];
+        q->arr[q->f]=0;
+        return a;
+    }
+}
+
+void display(struct circularQueue *q){
+for(int i=0;i<q->size;i++)
+{
+printf("%d | ",q->arr[i]);
+}
+} 
+ 
+int main(){
+    struct circularQueue q;
+    q.size = 4;
+    int t;
+    q.f = q.r = 0;
+    q.arr = (int*) malloc(q.size*sizeof(int));
+    printf("Enter: 1.NQ  2.DQ  3.Display  4.exit");
+while(1)
+{
+printf("\nENTER:");
+scanf("%d",&t);
+switch(t){
+
+case 1:
+printf("ENTER:");
+scanf("%d",&x);
+enqueue(&q,x);
+break;
+
+case 2:
+printf("DQ ilement: %d",dequeue(&q));
+break;
+
+case 3:
+display(&q);
+break;
+
+case 4:
+exit(1);
+break;
+}
+
+}
+}

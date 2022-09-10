@@ -1,0 +1,81 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define MAX 3
+
+int front,rear,queue[MAX];
+
+void enque()
+{ 
+//isFULL condition
+if(front==-1 && rear==MAX-1){
+printf("Q is full");
+}
+ 
+printf("value : ");
+rear=rear+1;
+printf("inserting at rear %d",rear);
+scanf("%d",&queue[rear]);
+   
+}
+
+void deque()
+{
+    if(rear==front){
+        printf("The queue is Empty");
+        exit(1);
+    }
+
+    front+=1;
+    printf("DQ element:%d\n",queue[front]);
+    queue[front]='\0';
+    printf("front is now %d",front);
+   
+}
+
+void display(){
+for(int i=0;i<MAX;i++)
+{
+printf("%d | ",queue[i]);
+}
+}
+
+void peek(){
+printf("top most element is now:%d",queue[rear]);
+}
+
+int main(){
+    int x;
+    front =-1;
+    rear =-1;
+    printf("Enter 1.enque 2.deque 3.display 4.exit\n");
+    while(1)
+    {   printf("ENTER : ");
+        scanf("%d",&x);
+        switch(x)
+        {
+            case 1:
+            enque();
+            break;
+            
+            case 2:
+            deque();
+            break;
+
+            case 3:
+            display();
+            break;
+          
+            case 4:
+            exit(1);
+            break;
+
+            case 5:
+            peek();
+            break;
+                
+
+        }
+        
+    }
+    return 0;
+}
