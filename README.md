@@ -1,4 +1,4 @@
-- 👋 Hi, I’m @VIPULNARESHBHOIR
+- <h3>👋 Hi, I’m @VIPULNARESHBHOIR</h3>
 - 👀 I’m interested in coding and programing
 - 🌱 I’m currently learning computer engineering
 - 💞️ I’m looking to collaborate on ...
