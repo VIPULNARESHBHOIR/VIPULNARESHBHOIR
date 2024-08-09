@@ -1,4 +1,4 @@
-- <h3>👋 Hi, I’m @VIPUL NARESH BHOIR</h3>
+- <h1>👋 Hi, I’m @VIPUL NARESH BHOIR</h1>
 - 👀 I’m interested in #Coding and Development
 - 🌱 I’m currently Persuing Computer Engineering
 - 💞️ I’m looking to collaborate on AIML
